@@ -1,7 +1,7 @@
 # Skin Color Estimation
 
 ## About
-This code repository is attempts to implement a color model space and skin detection technique of two papers.
+This code repository attempts to implement a color model space and skin detection technique of two papers.
 1. [A novel skin color model in YCbCr color space and its application to human face detection](https://ieeexplore.ieee.org/document/1038016)
 2. [Skin Detection Based on Image Color Segmentation with Histogram and
 K-Means Clustering](http://www.eleco.org.tr/openconf_2017/modules/request.php?module=oc_proceedings&action=view.php&id=248&file=1/248.pdf&a=Accept+as+Lecture)
@@ -10,11 +10,6 @@ I am planning to use this code to determine the skin color of patient with infla
 
 
 I initially used the implementation by [kamiry](https://github.com/kamiry/Skin-Color-Model), and later built upon it, which was an implementation of the first paper ([1]((https://ieeexplore.ieee.org/document/1038016))).
-
-## Packages
-- Tensor Flow
-- Keras
-- Scikit Learn
 
 ## Installation
 The following software requires that you have a copy of MATLAB R2020a (or greater) or a compatible version of Octave GNU. I used the following add-ons for MATLAB:
