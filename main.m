@@ -15,11 +15,12 @@ i = 11;
 image = strcat(imagefiles(i).folder,'/',imagefiles(i).name);
 image_rgb = imread(image);
 imshow(image_rgb)
-
+%%
 mask_s = test_step(image,centroid,covariance);
+imshow(mask_s)
 str = erase(sprintf('cluster_predicted_masks/%s.mat',"mask_s"),".jpg");
 save(str,"mask_s")
-
+%% 
 mean_rgb = compute_skin_patch(image_rgb,mask_s);
 
 figure;

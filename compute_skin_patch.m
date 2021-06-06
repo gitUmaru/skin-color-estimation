@@ -32,7 +32,7 @@ function [mean_rgb] = compute_skin_patch(image_rgb,mask_s)
 
     final_thresh_image = mask .* ostu_thresh_image;
 
-    figre;
+    figure;
     imshow(final_thresh_image);
 
     %% C. Estimate Skin Tone
