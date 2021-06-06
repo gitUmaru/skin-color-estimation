@@ -22,12 +22,10 @@ You need to specify the image directory in the `main.m` file. After which, you c
 ## Results
 ![results](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/full_results.JPG?raw=true)
 
-![](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/cluster.jpg?raw=true) ![](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/ycbcr.jpg?raw=true)
-
 **Figure 1.** Images of orginal input image, first mask, final composite maks, and ITA calcuation on skin color patch respectively
 
 ![](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/cluster.jpg?raw=true)|![](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/ycbcr.jpg?raw=true)|
-:-------------------------:|:-------------------------:|:-------------------------:|
+:-------------------------:|:-------------------------:|
 **Figure 2.1.** Image of Gaussian Ellipsoid Plot for skin cluster| **Figure 2.2.** A 3D cluster plot of a random dataset image in YCbCr space|
 
 ## Contributing
