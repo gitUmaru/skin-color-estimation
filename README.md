@@ -25,6 +25,7 @@ The following software requires that you have a copy of MATLAB R2020a (or greate
 You need to specify the image directory in the `main.m` file. After which, you can run the `main.m` MATLAB script.
 
 ## Results
+![results](https://raw.githubusercontent.com/gitUmaru/skin-color-estimation/main/comperative%20results/full_results.JPG)
 
 
 ## Contributing
