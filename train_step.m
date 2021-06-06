@@ -18,7 +18,7 @@ image = strcat(imagefiles(1).folder,'/',imagefiles(1).name);
 [centroid_i, covariance_i] = train_step(image, mask);
 
 %% Train
-for i=2:10
+for i=2:50
     disp(i)
     mask = strcat(maskfiles(i).folder,'/',maskfiles(i).name);
     image = strcat(imagefiles(i).folder,'/',imagefiles(i).name);
@@ -43,7 +43,7 @@ for j=1:size(centroid,1)
     plot_gaussian_ellipsoid(centroid(j,:), c);
 end
 
-save weights/skin_10_iter.mat centroid covariance
+save weights/skin_50_iter.mat centroid covariance
 
 %% Train Step Definition
 function [centroid, covariance] = train_step(image,mask)

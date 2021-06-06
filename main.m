@@ -1,8 +1,7 @@
 %% Basic Initialisation
 close all;
-clear all;
 load cluster_predicted_masks/mask_s
-load weights/skin_1000_iter
+load weights/skin_50_iter
 
 image_directory = 'skin_lesion/';
 
@@ -10,7 +9,8 @@ image_directory = 'skin_lesion/';
 imagefiles = dir(strcat(image_directory,'*.jpg'));      
 nfiles = length(imagefiles);    % Number of image files
 
-i = 11;
+
+i = 13;
 
 image = strcat(imagefiles(i).folder,'/',imagefiles(i).name);
 image_rgb = imread(image);
