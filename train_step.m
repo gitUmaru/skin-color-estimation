@@ -15,38 +15,46 @@ mfiles = length(maskfiles);    % Number of mask files
 mask = strcat(maskfiles(1).folder,'/',maskfiles(1).name);
 image = strcat(imagefiles(1).folder,'/',imagefiles(1).name);
 
-[centroid_i, covariance_i] = train_step(image, mask);
+[centroid_i, covariance_i] = train(image, mask);
+
+chkpnt = 1;
 
 %% Train
-for i=2:50
+for i=1:nfiles
     disp(i)
+    count = i;
     mask = strcat(maskfiles(i).folder,'/',maskfiles(i).name);
     image = strcat(imagefiles(i).folder,'/',imagefiles(i).name);
 
-    [centroid, covariance] = train_step(image, mask); % Just realized that this isn't updating the centroid and covariance but replacing it :(
-    
+    [centroid, covariance] = train(image, mask);
+
     if(size(centroid,1) == 2 && size(covariance,1) == 2)
         centroid = cat(1,centroid,[0 0 0]);
         covariance = cat(1,covariance,zeros(1,3,3));
     end
-    
+
     centroid = (centroid + centroid_i)./2;
     covariance = (covariance + covariance_i)./2;
-    
+
     centroid_i = centroid;
     covariance_i = covariance;
-end
 
-figure, axis([0 255 0 255 0 255]), xlabel('Y'), ylabel('Cb'), zlabel('Cr'), hold on; 
+    if(mod(i,1000)==0)
+        chkpnt_str = strcat('weights/skin_nfiles_chkpnt',int2str(i),'.mat');
+        save(chkpnt_str,'centroid','covariance')
+    end
+end
+%%
+figure, axis([0 255 0 255 0 255]), xlabel('Y'), ylabel('Cb'), zlabel('Cr'), hold on;
 for j=1:size(centroid,1)
     c = reshape(covariance(j,:,:), 3, 3);
     plot_gaussian_ellipsoid(centroid(j,:), c);
 end
 
-save weights/skin_50_iter.mat centroid covariance
+save weights/skin_nfiles_iter.mat centroid covariance
 
 %% Train Step Definition
-function [centroid, covariance] = train_step(image,mask)
+function [centroid, covariance] = train(image,mask)
     %% Read training images
 
     ground_truth = imread(mask);

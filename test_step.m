@@ -19,6 +19,6 @@ function [skin_predicted_mask] = test_step(image,centroid,covariance)
     skin_predicted_mask = zeros(size(im,1)*size(im,2),1);
     skin_predicted_mask(skin_predicted,1) = 1;
     skin_predicted_mask = reshape(skin_predicted_mask, size(im,1), size(im,2));
-    figure;
-    imshow(skin_predicted_mask)
+    %figure;
+    %imshow(skin_predicted_mask)
 end

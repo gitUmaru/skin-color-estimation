@@ -4,8 +4,8 @@ function [mean_rgb] = compute_skin_patch(image_rgb,mask_s)
     init_mask = uint8(imbinarize(rgb2gray(image_rgb), ostu_threshold));
 
     ostu_thresh_image = (image_rgb .* init_mask);
-    figure;
-    imshow(ostu_thresh_image);
+    %figure;
+    %imshow(ostu_thresh_image);
     %% B: Skin Detection - Removing non-skin pixels
     mask_x = zeros(size(image_rgb(:, :, 1)));
     mask_y = zeros(size(image_rgb(:, :, 1)));
@@ -32,8 +32,8 @@ function [mean_rgb] = compute_skin_patch(image_rgb,mask_s)
 
     final_thresh_image = mask .* ostu_thresh_image;
 
-    figure;
-    imshow(final_thresh_image);
+    %figure;
+    %imshow(final_thresh_image);
 
     %% C. Estimate Skin Tone
     [index_x, index_y] = find(imbinarize(mask));
