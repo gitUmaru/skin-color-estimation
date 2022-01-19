@@ -26,7 +26,7 @@ You need to specify the image directory in the `main.m` file. After which, you c
 
 ![](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/cluster.jpg?raw=true)|![](https://github.com/gitUmaru/skin-color-estimation/blob/main/README_assets/ycbcr.jpg?raw=true)|
 :-------------------------:|:-------------------------:|
-**Figure 2.1.** Image of Gaussian Ellipsoid Plot for skin cluster| **Figure 2.2.** A 3D cluster plot of a random dataset image in YCbCr space|
+**Figure 2.1.** Image of gaussian ellipsoid plot for skin cluster| **Figure 2.2.** A 3D cluster plot of skin pixels of an image in YCbCr space|
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
